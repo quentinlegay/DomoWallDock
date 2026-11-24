@@ -387,4 +387,6 @@
     <string name="settings_language">Langue de l’appli</string>
     <string name="language_system">Langue de la tablette</string>
     <string name="language_restart">Langue changée : l’appli redémarre…</string>
+    <string name="settings_keep_screen_on">Garder l\'écran allumé</string>
+    <string name="settings_keep_screen_on_help">Décoché : la tablette se met en veille après le délai d\'Android (Paramètres > Affichage > Veille), comme avec les autres applis.</string>
 </resources>

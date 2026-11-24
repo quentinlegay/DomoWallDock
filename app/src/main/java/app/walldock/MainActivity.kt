@@ -90,7 +90,7 @@ class MainActivity : Activity(), DashboardController {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         prefs = Prefs(this)
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        if (prefs.keepScreenOn) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         val root = FrameLayout(this)
         root.setBackgroundColor(Color.BLACK)
@@ -573,7 +573,8 @@ class MainActivity : Activity(), DashboardController {
         val params = window.attributes
         if (AppState.screenOn) {
             blackCover.visibility = View.GONE
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            if (prefs.keepScreenOn) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            else window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             val system = AppState.brightness >= 0 && prefs.systemBrightness && Settings.System.canWrite(this)
             if (system) {
                 // Luminosité de toute la tablette (aussi dans les autres applis)

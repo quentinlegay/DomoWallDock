@@ -384,4 +384,6 @@
     <string name="settings_language">Sprache der App</string>
     <string name="language_system">Sprache des Tablets</string>
     <string name="language_restart">Sprache geändert: Die App startet neu…</string>
+    <string name="settings_keep_screen_on">Bildschirm eingeschaltet lassen</string>
+    <string name="settings_keep_screen_on_help">Deaktiviert: Das Tablet geht nach der Android-Zeit (Einstellungen > Display > Bildschirm-Timeout) in den Ruhezustand, wie bei anderen Apps.</string>
 </resources>

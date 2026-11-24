@@ -108,6 +108,11 @@ class Prefs(context: Context) {
         get() = sp.getBoolean(KEY_SAVER, false)
         set(value) = sp.edit().putBoolean(KEY_SAVER, value).apply()
 
+    /** Garder l'écran allumé sur le tableau de bord (sinon la veille d'Android s'applique). */
+    var keepScreenOn: Boolean
+        get() = sp.getBoolean("keep_screen_on", true)
+        set(value) = sp.edit().putBoolean("keep_screen_on", value).apply()
+
     /** Délai avant l'écran de veille, en secondes (ancien réglage en minutes repris). */
     var screensaverSeconds: Int
         get() = if (sp.contains("screensaver_seconds")) sp.getInt("screensaver_seconds", 300)

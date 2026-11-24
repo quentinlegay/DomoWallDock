@@ -384,4 +384,6 @@
     <string name="settings_language">Idioma de la app</string>
     <string name="language_system">Idioma de la tableta</string>
     <string name="language_restart">Idioma cambiado: la app se reinicia…</string>
+    <string name="settings_keep_screen_on">Mantener la pantalla encendida</string>
+    <string name="settings_keep_screen_on_help">Desmarcado: la tableta entra en reposo tras el tiempo de Android (Ajustes > Pantalla > Suspensión), como con otras apps.</string>
 </resources>

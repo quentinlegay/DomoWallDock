@@ -62,6 +62,7 @@ class SettingsActivity : Activity() {
     private lateinit var zoomField: EditText
     private lateinit var systemBrightnessCheck: CheckBox
     private lateinit var bootCheck: CheckBox
+    private lateinit var keepOnCheck: CheckBox
     private lateinit var listenOffCheck: CheckBox
     private lateinit var sendspinCheck: CheckBox
     private lateinit var calendarCheck: CheckBox
@@ -260,6 +261,12 @@ class SettingsActivity : Activity() {
         bootCheck.setTextColor(Color.WHITE)
         bootCheck.isChecked = prefs.startOnBoot
         column.addView(bootCheck)
+        keepOnCheck = CheckBox(this)
+        keepOnCheck.text = tr(R.string.settings_keep_screen_on)
+        keepOnCheck.setTextColor(Color.WHITE)
+        keepOnCheck.isChecked = prefs.keepScreenOn
+        column.addView(keepOnCheck)
+        column.addView(label(tr(R.string.settings_keep_screen_on_help)))
 
         // Écran de veille : activation et délai (son contenu est dans les services)
         column.addView(heading(tr(R.string.settings_screensaver), 18f))
@@ -805,6 +812,7 @@ class SettingsActivity : Activity() {
                 photoSecondsField.text.toString().toIntOrNull()?.let { prefs.photoSeconds = it }
                 zoomField.text.toString().toIntOrNull()?.let { prefs.zoom = it }
                 prefs.startOnBoot = bootCheck.isChecked
+                prefs.keepScreenOn = keepOnCheck.isChecked
                 prefs.listenScreenOff = listenOffCheck.isChecked
                 prefs.sendspinEnabled = sendspinCheck.isChecked
                 ApiService.instance?.applySendspin()
